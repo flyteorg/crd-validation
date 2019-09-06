@@ -1,13 +1,12 @@
 package utils
 
 import (
-	spec "github.com/go-openapi/spec"
+	"github.com/go-openapi/spec"
 	extensionsobj "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	common "k8s.io/kube-openapi/pkg/common"
+	"k8s.io/kube-openapi/pkg/common"
 )
 
-// CustomResourceDefinitionTypeMeta set the default kind/apiversion of CRD
+// CustomResourceDefinitionTypeMeta set the default kind/apiversion of CRD	
 var CustomResourceDefinitionTypeMeta = metav1.TypeMeta{
 	Kind:       "CustomResourceDefinition",
 	APIVersion: "apiextensions.k8s.io/v1beta1",
@@ -39,10 +38,13 @@ func GetCustomResourceValidations(fn GetAPIDefinitions) map[string]*extensionsob
 func GetCustomResourceValidation(name string, fn func(ref common.ReferenceCallback) map[string]common.OpenAPIDefinition) *extensionsobj.CustomResourceValidation {
 	openapiSpec := fn(OpenAPIRefCallBack)
 	fixKnownTypes(openapiSpec)
+
 	schema := openapiSpec[name].Schema
-	return &extensionsobj.CustomResourceValidation{
+
+	ret := &extensionsobj.CustomResourceValidation{
 		OpenAPIV3Schema: SchemaPropsToJSONProps(&schema, openapiSpec, true),
 	}
+	return ret
 }
 
 // ref: https://github.com/kubernetes/kubernetes/issues/62329
