@@ -49,7 +49,7 @@
   revision = "de5bf2ad457846296e2031421a34e2568e304e35"
 
 [[projects]]
-  digest = "1:9013165c6e6c1e00a33e57619d061f399878c31be8c28be265d7ec6fccf34d0a"
+  digest = "1:9a19f28b43fa5fdb56e2a32978102516622088e76a960a510d7372958d2228ae"
   name = "github.com/aws/aws-sdk-go"
   packages = [
     "aws",
@@ -93,8 +93,8 @@
     "service/sts/stsiface",
   ]
   pruneopts = ""
-  revision = "3dcbbb77091aafa553f033227bf12e4742fa0c51"
-  version = "v1.23.15"
+  revision = "4651c2a344e90782ae06c956a5b0edcae3ae21d0"
+  version = "v1.23.16"
 
 [[projects]]
   digest = "1:ac2a05be7167c495fe8aaf8aaf62ecf81e78d2180ecb04e16778dc6c185c96a5"
@@ -103,6 +103,14 @@
   pruneopts = ""
   revision = "37c8de3658fcb183f997c4e13e8337516ab753e6"
   version = "v1.0.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:64a2f1a1c5b11d101f3c39ebe094dc59e05c74cc131a5f466745d315b3303542"
+  name = "github.com/bnsblue/crd-validation"
+  packages = ["cmd"]
+  pruneopts = ""
+  revision = "d183c545ccc3ba4aa6d8b30a5b26144c3d226b49"
 
 [[projects]]
   digest = "1:545ae40d6dde46043a71bdfd7f9a17f2353ce16277c83ac685af231b4b7c4beb"
@@ -334,14 +342,14 @@
 
 [[projects]]
   branch = "openapi-def"
-  digest = "1:2336839c3558f31041a1c22834de2623457bfe3190458ca350a852f9c7beef6e"
+  digest = "1:c109d1e5944e30552af6bd6644d05deb2ad28ec4bf0d2b5558215dbe234eb10f"
   name = "github.com/lyft/flytepropeller"
   packages = [
     "pkg/apis/flyteworkflow",
     "pkg/apis/flyteworkflow/v1alpha1",
   ]
   pruneopts = ""
-  revision = "6b78b1fd2c3a727bde800e724cb8ac2208c10eaf"
+  revision = "51be610403d9661698a096007c7a6b5f21acb1c2"
 
 [[projects]]
   digest = "1:77615fd7bcfd377c5e898c41d33be827f108166691cb91257d27113ee5d08650"
@@ -664,7 +672,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:40d6ac6470c28e39be1beb13e4630d9629166aaf610654506a2bb5e0c72289a3"
+  digest = "1:b94fcda151123f06c8d67e9b27d076e04006d1ab33e52babd40eeb66a1559ab1"
   name = "google.golang.org/api"
   packages = [
     "gensupport",
@@ -678,7 +686,7 @@
     "transport/http/internal/propagation",
   ]
   pruneopts = ""
-  revision = "1173cbd51d37955dd648b28a847043e10fd35b9a"
+  revision = "c5ff4101c09da19daa147f5d98245a08bfea9838"
 
 [[projects]]
   digest = "1:0568e577f790e9bd0420521cff50580f9b38165a38f217ce68f55c4bbaa97066"
@@ -701,11 +709,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:e1505a39ad844b6a89856ffb97363cc47cbee0c511c1423d2d9c673cc4a215a0"
+  digest = "1:d57fc4649c80e946db4ae2064153e5896dc45936752db1ade3d94c52734116c2"
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
   pruneopts = ""
-  revision = "24fa4b261c55da65468f2abfdae2b024eef27dfb"
+  revision = "92dd089d5514cecde7a465f807541f83dfd486d5"
 
 [[projects]]
   digest = "1:e8a4007e58ea9431f6460d1bc5c7f9dd29fdc0211ab780b6ad3d0581478f2076"
@@ -844,11 +852,15 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/bnsblue/crd-validation/cmd",
     "github.com/ghodss/yaml",
     "github.com/go-openapi/spec",
     "github.com/lyft/flytepropeller/pkg/apis/flyteworkflow/v1alpha1",
+    "github.com/sirupsen/logrus",
+    "github.com/spf13/cobra",
     "github.com/spf13/viper",
     "k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1",
+    "k8s.io/apimachinery/pkg/apis/meta/v1",
     "k8s.io/apimachinery/pkg/util/sets",
     "k8s.io/kube-openapi/pkg/common",
   ]

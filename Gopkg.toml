@@ -3,8 +3,12 @@
   version = "1.0.0"
 
 [[constraint]]
+  name = "github.com/spf13/cobra"
+  version = "0.0.3"
+
+[[constraint]]
   name = "github.com/spf13/viper"
-  version = "1.0.2"
+  version = "1.4.0"
 
 [[override]]
   name = "k8s.io/apimachinery"
@@ -18,9 +22,9 @@
   version = "kubernetes-1.13.10"
   name = "k8s.io/apiextensions-apiserver"
 
-[[constraint]]
-  name = "github.com/lyft/flytepropeller"
-  branch = "openapi-def"
+# [[constraint]]
+#  name = "github.com/lyft/flytepropeller"
+#  branch = "openapi-def"
 
 [[override]]
   name = "k8s.io/go-client"
